@@ -1,23 +1,12 @@
-import { Poppins } from "next/font/google";
 import "./globals.css";
+import { font, metadata as metadata_obj } from "@/data/global";
 
-const poppins = Poppins({
-    subsets: ["latin"],
-    display: "swap",
-    variable: "--font-poppins",
-    weight: ["100", "400"],
-});
-
-export const metadata = {
-    title: "Tejas Dhanani",
-    description:
-        "Welcome to Tejas's portfolio! Discover projects in software development, including responsive websites and custom solutions.",
-};
+export const metadata = metadata_obj;
 
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${poppins.classname}`}>{children}</body>
+            <body className={`${font.classname}`}>{children}</body>
         </html>
     );
 }
